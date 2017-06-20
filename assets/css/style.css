@@ -1,4 +1,5 @@
 p {
+    margin: 0;
     font-family: Montserrat;
 }
 
@@ -17,7 +18,7 @@ body {
 
 #navbar {
     width: 250px;
-    height: 400px;
+    height: 340px;
     border-radius: 5px;
 
     display: flex;
@@ -44,10 +45,10 @@ body {
     height: 50px;
 }
 
-.tint {
+.intro > .tint {
     position: absolute;
     height: 3px;
-    width: 120px;
+    width: 130px;
 
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -66,7 +67,91 @@ body {
 }
 
 .navbody {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+
+    width: 100%;
+
+    padding-bottom: 10px;
+}
+
+.section {
+    background-color: #0C1F2C;
+
+    display: flex;
+    align-items: center;
+
+    height: 30px;
+
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+    transition: box-shadow 0.3s;
+}
+
+.section:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.section > .circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 15px 0 10px;
+
+    background: rgba(218, 221, 223, 0.2);
+}
+
+.circle > .inner {
+    opacity: 0;
+    background-color: #23B4F5;
+
+    transition: opacity 0.3s;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 3px;
+}
+
+.section:hover > .circle > .inner {
+    opacity: 1;
+}
+
+.section > .sep {
+    width: 1px;
+
+    opacity: .2;
+    background-color: #85ADCE;
+}
+
+.section .info {
+    flex: 1;
+}
+
+.section .title {
+    font-size: 15px;
+    color: #DADDDF;
+    opacity: .9;
+}
+
+.section .desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: #23B4F5;
+    opacity: .7;
+}
+
+.section:hover > .right-arrow {
+    border-color: #23B4F5;
+    opacity: .8;
 }
 
 .footer {
@@ -74,4 +159,21 @@ body {
     border-bottom-right-radius: 5px;
 
     height: 40px;
+}
+
+.right-arrow {
+    width: 3px;
+    height: 3px;
+    margin-right: 10px;
+
+    opacity: .2;
+
+    border: solid;
+    border-color: #DADDDF;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    transform: rotate(-45deg);
+    transition: border-color 0.3s, opacity 0.3s;
 }
