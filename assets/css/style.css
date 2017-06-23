@@ -17,6 +17,8 @@ body {
 }
 
 #navbar {
+    position: relative;
+
     width: 250px;
     height: 340px;
     border-radius: 5px;
@@ -28,6 +30,9 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
     background-color: #0C1F2C;
+
+    right: 0;
+    transition: right 1.5s;
 }
 
 .dark {
@@ -138,13 +143,26 @@ body {
     font-size: 15px;
     color: #DADDDF;
     opacity: .9;
+
+    transition: opacity 0.3s;
+}
+
+.section:hover .title {
+    opacity: 1;
 }
 
 .section .desc {
-    font-size: 12px;
+    line-height: 10px;
+    font-size: 11px;
     font-weight: 300;
     color: #23B4F5;
-    opacity: .7;
+    opacity: .6;
+
+    transition: opacity 0.3s;
+}
+
+.section:hover .desc {
+    opacity: .9;
 }
 
 .section:hover > .right-arrow {
@@ -157,6 +175,22 @@ body {
     border-bottom-right-radius: 5px;
 
     height: 40px;
+}
+
+#greet {
+    visibility: hidden;
+    width: 0;
+
+    overflow: hidden;
+
+    transition: all 1.2s;
+
+    height: 340px;
+    margin: 10px;
+    border-radius: 5px;
+
+    background-color: #0C1F2C;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .right-arrow {
