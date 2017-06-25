@@ -1,6 +1,5 @@
 window.onload = function () {
 
-    var navbar = document.getElementById("navbar");
     document.getElementById("greet-button").onclick = function () {
         let greetEl = document.getElementById("greet");
         let state = window.history.state;
