@@ -4,16 +4,11 @@ p {
 }
 
 body {
-    background-color: #F7F8F9;
-}
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-#content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
+   background-color: #F7F8F9;
 }
 
 #navbar {
@@ -177,13 +172,7 @@ body {
 }
 
 #greet {
-    visibility: hidden;
-    width: 0;
-
-    overflow: hidden;
-
-    transition: all 1.2s;
-
+    width: 500px;
     height: 340px;
     margin: 10px;
     border-radius: 5px;
@@ -193,6 +182,19 @@ body {
     border-color: #dadddf;
 
     background-color: #fff;
+}
+
+.content {
+    overflow: hidden;
+
+    visibility: visible;
+
+    transition: all 1.2s;
+}
+
+.content.inactive {
+    width: 0 !important;
+    visibility: hidden;
 }
 
 .right-arrow {

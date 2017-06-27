@@ -1,17 +1,45 @@
 window.onload = function () {
 
-    document.getElementById("greet-button").onclick = function () {
-        let greetEl = document.getElementById("greet");
-        let state = window.history.state;
+    var open;
+    function getSection() {
+        let url = new URL(window.location.href);
+        return url.pathname.split("/")[1];
+    }
 
-        if (state && state.content == "greet") {
-            window.history.replaceState({content: "home"}, null, "/");
-            greetEl.style.width = 0;
-            greetEl.style.visibility = "hidden";
+    function toggle(next, curr) {
+        clearInterval(open);
+
+        let delay = 1200;
+        if (curr != "") {
+            let currEl = document.getElementById(curr);
+            currEl.classList.add("inactive");
         } else {
-            window.history.replaceState({content: "greet"}, null, "greet/");
-            greetEl.style.width = 500; 
-            greetEl.style.visibility = "visible";
+            delay = 0;
         }
-    };
+
+        if (next != "") {
+            open = setTimeout(function () {
+                let nextEl = document.getElementById(next);
+                nextEl.classList.remove("inactive");
+            }, delay);
+        }
+
+        window.history.replaceState(null, null, next + "/");
+    }
+
+    function generateHandler(section) {
+        return function () {
+            if (getSection() == section) {
+                toggle("", section);
+            } else {
+                toggle(section, getSection());
+            }
+        };
+    }
+
+    var sections = ["greet"];
+    for (let section of sections) {
+        document.getElementById(section + "-button").onclick = generateHandler(section);
+    }
+
 };
