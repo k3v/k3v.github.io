@@ -14,6 +14,7 @@ body {
 #navbar {
     position: relative;
 
+    margin-right: 10px;
     width: 250px;
     height: 340px;
     border-radius: 5px;
@@ -22,11 +23,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-
     background-color: #0C1F2C;
-
-    right: 0;
-    transition: right 1.5s;
 }
 
 .dark {
@@ -118,6 +115,7 @@ body {
     border-radius: 3px;
 }
 
+.section.active > .circle > .inner,
 .section:hover > .circle > .inner {
     opacity: 1;
 }
@@ -141,6 +139,7 @@ body {
     transition: opacity 0.3s;
 }
 
+.section.active .title,
 .section:hover .title {
     opacity: 1;
 }
@@ -155,10 +154,12 @@ body {
     transition: opacity 0.3s;
 }
 
+.section.active .desc,
 .section:hover .desc {
     opacity: .9;
 }
 
+.section.active > .right-arrow,
 .section:hover > .right-arrow {
     border-color: #23B4F5;
     opacity: .8;
@@ -174,7 +175,42 @@ body {
 #greet {
     width: 500px;
     height: 340px;
-    margin: 10px;
+    border-radius: 5px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #dadddf;
+
+    background-color: #fff;
+}
+
+#thoughts {
+    width: 500px;
+    height: 340px;
+    border-radius: 5px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #dadddf;
+
+    background-color: #fff;
+}
+
+#notes {
+    width: 500px;
+    height: 340px;
+    border-radius: 5px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #dadddf;
+
+    background-color: #fff;
+}
+
+#projects {
+    width: 500px;
+    height: 340px;
     border-radius: 5px;
 
     border: solid;
@@ -186,15 +222,22 @@ body {
 
 .content {
     overflow: hidden;
-
     visibility: visible;
 
-    transition: all 1.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: width 1s, visibility 1s, border-width 0.2s;
 }
 
 .content.inactive {
     width: 0 !important;
     visibility: hidden;
+}
+
+.content.off {
+    border: none !important;
 }
 
 .right-arrow {
