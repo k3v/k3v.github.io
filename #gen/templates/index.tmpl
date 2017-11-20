@@ -13,7 +13,7 @@
                 <p class="name">Kevin Zheng</p>
             </div> 
             <div class="navbody"> 
-                <div id="greet-button" class="section"> 
+                <div id="greet-button" class="section {{- with eq .Active "greetings"}} active{{end}}"> 
                     <div class="circle"><div class="inner"></div></div>
                     <div class="info">
                         <p class="title">Greetings</p>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="right-arrow"></div>
                 </div>
-                <div id="thoughts-button" class="section active">
+                <div id="thoughts-button" class="section {{- with eq .Active "thoughts"}} active{{end}}">
                     <div class="circle"><div class="inner"></div></div>
                     <div class="info"> 
                         <p class="title">Thoughts</p>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="right-arrow"></div>
                 </div>
-                <div id="notes-button" class="section">
+                <div id="notes-button" class="section {{- with eq .Active "notes"}} active{{end}}">
                     <div class="circle"><div class="inner"></div></div>
                     <div class="info">
                         <p class="title">Notes</p>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="right-arrow"></div>
                 </div>
-                <div id="projects-button" class="section">
+                <div id="projects-button" class="section {{- with eq .Active "projects"}} active{{end}}">
                     <div class="circle"><div class="inner"></div></div>
                     <div class="info">
                         <p class="title">Projects</p>
@@ -49,13 +49,13 @@
             <div class="footer dark">
             </div>
         </div>
-        <div id="greet" class="content inactive off">
+        <div id="greet" class="content {{- with ne .Active "greetings"}} inactive off{{end}}">
         </div>
-        <div id="thoughts" class="content">
+        <div id="thoughts" class="content {{- with ne .Active "thoughts"}} inactive off{{end}}">
         </div>
-        <div id="notes" class="content inactive off">
+        <div id="notes" class="content {{- with ne .Active "notes"}} inactive off{{end}}">
         </div>
-        <div id="projects" class="content inactive off">
+        <div id="projects" class="content {{- with ne .Active "projects"}} inactive off{{end}}">
         </div>
     </body>
 </html>
