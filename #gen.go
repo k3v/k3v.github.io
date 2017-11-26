@@ -26,8 +26,7 @@ func main() {
 
 	for key, path := range gens {
 		os.Remove(path)
-
-		f, err := os.OpenFile(path, os.O_RDWR|os.O_CREATE, 0755)
+		f, err := os.Create(path)
 		if err != nil {
 			log.Fatal(err)
 		}
