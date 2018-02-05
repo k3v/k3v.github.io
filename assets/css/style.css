@@ -203,8 +203,11 @@ body {
 
 #greet > .intro > p {
     font-size: 14px;
+}
+
+#greet > .intro > p > strong {
     color: var(--dark-blue);
-} 
+}
 
 #thoughts {
     width: 500px;
@@ -257,4 +260,12 @@ body >.content.off {
 
     transform: rotate(-45deg);
     transition: border-color 0.3s, opacity 0.3s;
+}
+
+.ending {
+    text-align: center;
+    opacity: .2;
+
+    position: relative;
+    top: 5px;
 }
