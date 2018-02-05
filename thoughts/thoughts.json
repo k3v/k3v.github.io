@@ -1,8 +1,8 @@
 [
     {
-        "title": "Differentiating Math Expressions with Computing",
+        "title": "Differentiating Math Expressions through Computing",
         "date": "August 2nd 2017",
-        "id": "dmec",
+        "id": "dmetc",
         "descr": "constructing abstract syntax trees from math expressions with the precedence climbing algorithm and transforming them to perform differentiation",
         "tags": ["math", "grammar", "parsing", "ast"]
     }

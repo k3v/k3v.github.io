@@ -1,6 +1,6 @@
 :root {
     --dark-blue: #0C1F2C;
-    --light-blue: #23B4F5;
+    --light-blue: #23B4F5; 
     --bg-gray: #F1F4F7;
     --text-gray: #DADDDF;
 
@@ -41,7 +41,7 @@ body {
     background-color: var(--dark-blue);
 }
 
-.intro {
+#navbar > .intro {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
@@ -52,7 +52,7 @@ body {
     height: 50px;
 }
 
-.intro > .tint {
+#navbar > .intro > .tint {
     position: absolute;
     height: 3px;
     width: 130px;
@@ -186,31 +186,45 @@ body {
     height: 340px;
     border-radius: 5px;
 
+    position: relative;
+
+    overflow-wrap: normal;
+
     background-color: #fff;
 }
 
+#greet > .intro {
+    width: 470px;
+
+    margin: 15px;
+
+    position: absolute;
+}
+
+#greet > .intro > p {
+    font-size: 14px;
+}
+
+#greet > .intro > p > strong {
+    color: var(--dark-blue);
+}
+
 #thoughts {
-    width: 510px;
+    width: 500px;
     height: 340px;
     border-radius: 5px;
-
-    background-color: #fff;
 }
 
 #notes {
     width: 500px;
     height: 340px;
     border-radius: 5px;
-
-    background-color: #fff;
 }
 
 #projects {
     width: 500px;
     height: 340px;
     border-radius: 5px;
-
-    background-color: #fff;
 }
 
 body > .content {
@@ -246,4 +260,12 @@ body >.content.off {
 
     transform: rotate(-45deg);
     transition: border-color 0.3s, opacity 0.3s;
+}
+
+.ending {
+    text-align: center;
+    opacity: .2;
+
+    position: relative;
+    top: 5px;
 }
