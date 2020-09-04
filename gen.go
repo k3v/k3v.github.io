@@ -11,7 +11,7 @@ type TemplateData struct {
 }
 
 func main() {
-	tmpl, err := template.ParseFiles("#gen/templates/index.tmpl")
+	tmpl, err := template.ParseFiles("gen/templates/index.tmpl")
 	if err != nil {
 		log.Fatal(err)
 	}
